@@ -1,0 +1,272 @@
+/* --- General Styles & Resets --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Nicer font stack */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Apply box-sizing to all elements */
+    color: #333;
+    line-height: 1.6;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit; /* Inherit box-sizing */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0; /* Remove default top margin from headings */
+}
+
+img {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto;
+    display: block; /* Remove extra space below images */
+}
+
+a {
+    text-decoration: none; /* Remove underlines from links by default */
+    color: #007bff; /* Standard link color */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+a:hover {
+    color: #0056b3; /* Darker link color on hover */
+}
+
+button {
+    cursor: pointer;
+    padding: 0.8em 1.5em;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: #ffffff; /* White background */
+    padding: 1em 2em; /* More padding */
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    position: sticky; /* Make header stick on scroll */
+    top: 0;
+    z-index: 1000; /* Ensure header is above other content */
+}
+
+header h1 {
+    text-align: center;
+    margin-bottom: 0.5em;
+    color: #222; /* Darker heading */
+    font-weight: 600;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block; /* Use inline-block for better spacing control */
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555; /* Slightly lighter nav link color */
+    font-weight: 500;
+    padding: 0.5em 0; /* Add padding for easier clicking */
+    position: relative; /* For potential hover effects */
+}
+
+nav a:hover {
+    color: #000; /* Darken on hover */
+}
+
+/* Optional: Underline effect on hover */
+/*
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #333;
+    transition: width 0.3s ease;
+    -webkit-transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+    left: 0;
+    background-color: #333;
+}
+*/
+
+
+/* --- Hero Section --- */
+.hero {
+    background-color: #f4f4f4; /* Lighter grey */
+    padding: 5em 1em;
+    text-align: center;
+    margin-bottom: 3em; /* More space below hero */
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1.5em;
+}
+
+.cta-button {
+    display: inline-block; /* Treat like a button */
+    background-color: #e8491d; /* Example brand color */
+    color: #fff;
+    padding: 1em 2.5em;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #d73a0c; /* Darker shade on hover */
+    color: #fff; /* Ensure text color stays white */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* --- Product Grid & Items --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 2em; /* More gap */
+    padding: 0 2em; /* Padding on the sides */
+    margin-bottom: 3em;
+}
+
+.product-grid h2 {
+    grid-column: 1 / -1; /* Make the heading span all columns */
+    text-align: center;
+    margin-bottom: 1.5em;
+    font-size: 1.8rem;
+    color: #444;
+}
+
+.product-item {
+    border: 1px solid #ddd;
+    padding: 1.5em; /* More padding inside item */
+    text-align: center;
+    background-color: #fff;
+    border-radius: 5px; /* Rounded corners */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.product-item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Shadow on hover */
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.product-item img {
+    margin-bottom: 1em; /* More space below image */
+    max-height: 300px; /* Optional: Limit image height */
+    object-fit: cover; /* Ensure image covers the area well */
+}
+
+.product-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.product-item p {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 1em;
+}
+
+.product-item button {
+    background-color: #28a745; /* Green add to cart button */
+    color: white;
+}
+
+.product-item button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+
+/* --- Footer --- */
+footer {
+    background-color: #333;
+    color: #ccc; /* Lighter text color for footer */
+    text-align: center;
+    padding: 2em 1em; /* More padding */
+    margin-top: 3em; /* More space above footer */
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0.5em 0;
+}
+
+footer a {
+    color: #fff; /* White links in footer */
+    text-decoration: underline; /* Underline footer links for clarity */
+}
+
+footer a:hover {
+    color: #eee; /* Slightly lighter on hover */
+    text-decoration: none; /* Remove underline on hover */
+}
+
+/* --- Responsive Adjustments (Example) --- */
+@media (max-width: 768px) {
+    header {
+        padding: 1em;
+    }
+    header h1 {
+        font-size: 1.8rem;
+    }
+    nav ul li {
+        margin: 0 10px;
+    }
+    .hero {
+        padding: 3em 1em;
+    }
+    .hero h2 {
+        font-size: 2rem;
+    }
+    .product-grid {
+        padding: 0 1em;
+        gap: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        /* Consider making nav vertical on very small screens */
+    }
+    nav ul li {
+        display: block; /* Stack nav items */
+        margin: 10px 0;
+    }
+    .product-item {
+        padding: 1em;
+    }
+    footer {
+        padding: 1.5em 1em;
+    }
+}
